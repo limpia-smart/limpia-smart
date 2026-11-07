@@ -6,8 +6,9 @@
 <title>Limpia Smart</title>
 
 <style>
+
 body{
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     text-align:center;
     background:#f0f7ff;
     color:#234;
@@ -17,26 +18,31 @@ body{
 header{
     background:#1769aa;
     color:white;
-    padding:25px;
+    padding:30px 20px;
+}
+
+header h1{
+    margin:0;
 }
 
 section{
-    padding:20px;
+    padding:25px 20px;
+}
+
+h2{
+    color:#1769aa;
 }
 
 .producto{
     background:white;
-    margin:15px auto;
-    padding:15px;
+    margin:18px auto;
+    padding:20px;
     border-radius:12px;
     max-width:500px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.producto:hover{
-    transform:scale(1.02);
-}
-
-h2{
+.producto h3{
     color:#1769aa;
 }
 
@@ -44,7 +50,7 @@ h2{
     display:inline-block;
     background:#1769aa;
     color:white;
-    padding:10px 18px;
+    padding:11px 20px;
     border-radius:8px;
     text-decoration:none;
     margin-top:10px;
@@ -57,20 +63,34 @@ h2{
 .apartado{
     display:none;
     background:white;
-    margin:20px auto;
+    margin:25px auto;
     padding:25px;
     border-radius:12px;
-    max-width:600px;
+    max-width:650px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
 .apartado:target{
     display:block;
 }
 
-.imagen-producto{
-    width:220px;
-    max-width:100%;
+.espacio-foto{
+    width:250px;
+    height:250px;
+    margin:20px auto;
+    border:3px dashed #1769aa;
     border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#1769aa;
+    background:#f0f7ff;
+}
+
+.precio{
+    font-size:20px;
+    font-weight:bold;
+    color:#1769aa;
 }
 
 footer{
@@ -79,6 +99,7 @@ footer{
     padding:15px;
     margin-top:30px;
 }
+
 </style>
 </head>
 
@@ -89,67 +110,140 @@ footer{
 <p>Limpieza y cuidado tecnológico</p>
 </header>
 
-<section>
+
+<section id="productos">
+
 <h2>Nuestros productos</h2>
 
 <div class="producto">
+
 <h3>Spray para pantallas</h3>
+
 <p>Para pantallas compatibles.</p>
-<a class="boton" href="#pantallas">Ver producto</a>
+
+<a class="boton" href="#pantallas">
+Ver producto
+</a>
+
 </div>
 
+
 <div class="producto">
+
 <h3>Spray para computadoras</h3>
+
 <p>Para superficies exteriores compatibles.</p>
-<a class="boton" href="#computadoras">Ver producto</a>
+
+<a class="boton" href="#computadoras">
+Ver producto
+</a>
+
 </div>
 
+
 <div class="producto">
+
 <h3>Spray multiuso tecnológico</h3>
+
 <p>Para dispositivos compatibles.</p>
-<a class="boton" href="#multiuso">Ver producto</a>
+
+<a class="boton" href="#multiuso">
+Ver producto
+</a>
+
 </div>
 
 </section>
+
 
 <section id="pantallas" class="apartado">
+
 <h2>Spray para pantallas</h2>
 
-<p>Producto de Limpia Smart pensado para la limpieza de pantallas compatibles.</p>
+<div class="espacio-foto">
+Foto del spray
+</div>
 
-<p>Foto del producto próximamente</p>
+<p>
+Producto de Limpia Smart pensado para la limpieza
+de pantallas compatibles.
+</p>
 
-<a class="boton" href="#inicio">Volver a productos</a>
+<p class="precio">
+Precio: $_
+</p>
+
+<a class="boton" href="#productos">
+Volver a productos
+</a>
+
 </section>
+
 
 <section id="computadoras" class="apartado">
+
 <h2>Spray para computadoras</h2>
 
-<p>Producto para la limpieza de superficies exteriores compatibles de computadoras.</p>
+<div class="espacio-foto">
+Foto del spray
+</div>
 
-<p>Foto del producto próximamente</p>
+<p>
+Producto para la limpieza de superficies exteriores
+compatibles de computadoras.
+</p>
 
-<a class="boton" href="#inicio">Volver a productos</a>
+<p class="precio">
+Precio: $_
+</p>
+
+<a class="boton" href="#productos">
+Volver a productos
+</a>
+
 </section>
+
 
 <section id="multiuso" class="apartado">
+
 <h2>Spray multiuso tecnológico</h2>
 
-<p>Producto pensado para la limpieza de dispositivos electrónicos compatibles.</p>
+<div class="espacio-foto">
+Foto del spray
+</div>
 
-<p>Foto del producto próximamente</p>
+<p>
+Producto pensado para la limpieza de dispositivos
+electrónicos compatibles.
+</p>
 
-<a class="boton" href="#inicio">Volver a productos</a>
+<p class="precio">
+Precio: $_
+</p>
+
+<a class="boton" href="#productos">
+Volver a productos
+</a>
+
 </section>
 
-<section id="inicio">
+
+<section>
+
 <h2>Sobre nosotros</h2>
 
-<p>Somos una microempresa dedicada al cuidado de dispositivos electrónicos.</p>
+<p>
+Somos una microempresa dedicada al cuidado
+de dispositivos electrónicos.
+</p>
+
 </section>
 
+
 <footer>
+
 <p>Limpia Smart © 2026</p>
+
 </footer>
 
 </body>
