@@ -4,40 +4,153 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Limpia Smart</title>
+
 <style>
-body{font-family:Arial;text-align:center;background:#f0f7ff;color:#234}
-header{background:#1769aa;color:white;padding:25px}
-section{padding:20px}
-.producto{background:white;margin:15px;padding:15px;border-radius:12px}
-h2{color:#1769aa}
+body{
+    font-family:Arial;
+    text-align:center;
+    background:#f0f7ff;
+    color:#234;
+    margin:0;
+}
+
+header{
+    background:#1769aa;
+    color:white;
+    padding:25px;
+}
+
+section{
+    padding:20px;
+}
+
+.producto{
+    background:white;
+    margin:15px auto;
+    padding:15px;
+    border-radius:12px;
+    max-width:500px;
+}
+
+.producto:hover{
+    transform:scale(1.02);
+}
+
+h2{
+    color:#1769aa;
+}
+
+.boton{
+    display:inline-block;
+    background:#1769aa;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+.boton:hover{
+    background:#0d4f82;
+}
+
+.apartado{
+    display:none;
+    background:white;
+    margin:20px auto;
+    padding:25px;
+    border-radius:12px;
+    max-width:600px;
+}
+
+.apartado:target{
+    display:block;
+}
+
+.imagen-producto{
+    width:220px;
+    max-width:100%;
+    border-radius:12px;
+}
+
+footer{
+    background:#1769aa;
+    color:white;
+    padding:15px;
+    margin-top:30px;
+}
 </style>
 </head>
+
 <body>
+
 <header>
 <h1>Limpia Smart</h1>
 <p>Limpieza y cuidado tecnológico</p>
 </header>
+
 <section>
 <h2>Nuestros productos</h2>
+
 <div class="producto">
 <h3>Spray para pantallas</h3>
 <p>Para pantallas compatibles.</p>
+<a class="boton" href="#pantallas">Ver producto</a>
 </div>
+
 <div class="producto">
 <h3>Spray para computadoras</h3>
 <p>Para superficies exteriores compatibles.</p>
+<a class="boton" href="#computadoras">Ver producto</a>
 </div>
+
 <div class="producto">
 <h3>Spray multiuso tecnológico</h3>
 <p>Para dispositivos compatibles.</p>
+<a class="boton" href="#multiuso">Ver producto</a>
 </div>
+
 </section>
-<section>
+
+<section id="pantallas" class="apartado">
+<h2>Spray para pantallas</h2>
+
+<p>Producto de Limpia Smart pensado para la limpieza de pantallas compatibles.</p>
+
+<p>Foto del producto próximamente</p>
+
+<a class="boton" href="#inicio">Volver a productos</a>
+</section>
+
+<section id="computadoras" class="apartado">
+<h2>Spray para computadoras</h2>
+
+<p>Producto para la limpieza de superficies exteriores compatibles de computadoras.</p>
+
+<p>Foto del producto próximamente</p>
+
+<a class="boton" href="#inicio">Volver a productos</a>
+</section>
+
+<section id="multiuso" class="apartado">
+<h2>Spray multiuso tecnológico</h2>
+
+<p>Producto pensado para la limpieza de dispositivos electrónicos compatibles.</p>
+
+<p>Foto del producto próximamente</p>
+
+<a class="boton" href="#inicio">Volver a productos</a>
+</section>
+
+<section id="inicio">
 <h2>Sobre nosotros</h2>
+
 <p>Somos una microempresa dedicada al cuidado de dispositivos electrónicos.</p>
 </section>
+
 <footer>
 <p>Limpia Smart © 2026</p>
 </footer>
+
 </body>
 </html>
