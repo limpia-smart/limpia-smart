@@ -200,35 +200,48 @@ footer {
 
 <header>
 
-<img src="logo.jpg" alt="Logo de Limpia Smart" class="logo">
+<img src="./logo.jpg"
+     alt="Logo de Limpia Smart"
+     class="logo">
 
 <h1>Limpia Smart</h1>
 
 <p>Limpieza y cuidado tecnológico</p>
 
-<p class="slogan">Dale nueva vida a tu tecnología</p>
+<p class="slogan">
+Dale nueva vida a tu tecnología
+</p>
 
 </header>
 
 
 <div class="contenedor">
 
-<h2 class="titulo">Nuestros productos</h2>
+<h2 class="titulo">
+Nuestros productos
+</h2>
 
 
 <div class="productos">
 
 
+<!-- SPRAY PARA PANTALLAS -->
+
 <div class="producto">
 
-<h3>Spray para pantallas</h3>
+<h3>
+Spray para pantallas
+</h3>
 
 <p>
-Limpieza y cuidado para pantallas de computadoras,
-laptops y otros dispositivos electrónicos.
+Limpieza y cuidado para pantallas de
+computadoras, laptops y otros dispositivos
+electrónicos.
 </p>
 
-<p class="precio">$75</p>
+<p class="precio">
+$75
+</p>
 
 <a href="#pantallas" class="boton">
 Ver producto
@@ -237,18 +250,23 @@ Ver producto
 </div>
 
 
+<!-- SPRAY DE MENTA -->
 
 <div class="producto">
 
-<h3>Spray de menta</h3>
+<h3>
+Spray de menta
+</h3>
 
 <p>
-Una opción con agradable aroma de menta para
-el cuidado y limpieza de superficies tecnológicas.
+Una opción con agradable aroma de menta
+para el cuidado y limpieza de superficies
+tecnológicas.
 </p>
 
-<p class="precio">$80</p>
-
+<p class="precio">
+$80
+</p>
 <a href="#menta" class="boton">
 Ver producto
 </a>
@@ -256,16 +274,22 @@ Ver producto
 </div>
 
 
+<!-- SPRAY MULTIUSO -->
 
 <div class="producto">
-<h3>Spray multiuso tecnológico</h3>
+
+<h3>
+Spray multiuso tecnológico
+</h3>
 
 <p>
 Una opción práctica para el cuidado y limpieza
 de diferentes superficies tecnológicas.
 </p>
 
-<p class="precio">$90</p>
+<p class="precio">
+$90
+</p>
 
 <a href="#multiuso" class="boton">
 Ver producto
@@ -276,12 +300,15 @@ Ver producto
 </div>
 
 
+<!-- DETALLE PANTALLAS -->
 
 <section id="pantallas" class="detalle">
 
-<h2>Spray para pantallas</h2>
+<h2>
+Spray para pantallas
+</h2>
 
-<img src="Spray-pantallas.jpg"
+<img src="./Spray-pantallas.jpg"
      alt="Spray para pantallas"
      class="foto-producto">
 
@@ -297,7 +324,9 @@ Precio: $75
 
 <div class="pedido">
 
-<h3>Hacer pedido</h3>
+<h3>
+Hacer pedido
+</h3>
 
 <input type="text"
        id="nombrePantallas"
@@ -309,8 +338,7 @@ Precio: $75
        placeholder="Cantidad">
 
 <textarea id="comentarioPantallas"
-          placeholder="Comentario adicional (opcional)">
-</textarea>
+          placeholder="Comentario adicional (opcional)"></textarea>
 
 <button class="boton-whatsapp"
 onclick="enviarPedido(
@@ -332,10 +360,13 @@ Volver a productos
 </section>
 
 
+<!-- DETALLE MENTA -->
 
 <section id="menta" class="detalle">
 
-<h2>Spray de menta</h2>
+<h2>
+Spray de menta
+</h2>
 
 <div class="foto-producto">
 
@@ -346,8 +377,8 @@ Foto del producto próximamente
 </div>
 
 <p>
-Spray con aroma de menta pensado para el cuidado
-y limpieza de superficies tecnológicas.
+Spray con aroma de menta pensado para el
+cuidado y limpieza de superficies tecnológicas.
 </p>
 
 <p class="precio">
@@ -357,7 +388,9 @@ Precio: $80
 
 <div class="pedido">
 
-<h3>Hacer pedido</h3>
+<h3>
+Hacer pedido
+</h3>
 
 <input type="text"
        id="nombreMenta"
@@ -369,8 +402,7 @@ Precio: $80
        placeholder="Cantidad">
 
 <textarea id="comentarioMenta"
-          placeholder="Comentario adicional (opcional)">
-</textarea>
+          placeholder="Comentario adicional (opcional)"></textarea>
 
 <button class="boton-whatsapp"
 onclick="enviarPedido(
@@ -392,10 +424,13 @@ Volver a productos
 </section>
 
 
+<!-- DETALLE MULTIUSO -->
 
 <section id="multiuso" class="detalle">
 
-<h2>Spray multiuso tecnológico</h2>
+<h2>
+Spray multiuso tecnológico
+</h2>
 
 <div class="foto-producto">
 
@@ -406,8 +441,8 @@ Foto del producto próximamente
 </div>
 
 <p>
-Una opción práctica para la limpieza de diferentes
-superficies tecnológicas.
+Una opción práctica para la limpieza de
+diferentes superficies tecnológicas.
 </p>
 
 <p class="precio">
@@ -417,7 +452,9 @@ Precio: $90
 
 <div class="pedido">
 
-<h3>Hacer pedido</h3>
+<h3>
+Hacer pedido
+</h3>
 
 <input type="text"
        id="nombreMultiuso"
@@ -429,8 +466,7 @@ Precio: $90
        placeholder="Cantidad">
 
 <textarea id="comentarioMultiuso"
-          placeholder="Comentario adicional (opcional)">
-</textarea>
+          placeholder="Comentario adicional (opcional)"></textarea>
 
 <button class="boton-whatsapp"
 onclick="enviarPedido(
@@ -448,11 +484,9 @@ Enviar pedido por WhatsApp
 <a href="#" class="volver">
 Volver a productos
 </a>
-
 </section>
 
 </div>
-
 
 
 <footer>
@@ -464,10 +498,15 @@ Limpia Smart © 2026
 
 <script>
 
-function enviarPedido(producto, nombreID, cantidadID, comentarioID) {
+function enviarPedido(
+    producto,
+    nombreID,
+    cantidadID,
+    comentarioID
+) {
 
     let nombre =
-        document.getElementById(nombreID).value;
+    document.getElementById(nombreID).value;
 
     let cantidad =
     document.getElementById(cantidadID).value;
@@ -478,10 +517,11 @@ function enviarPedido(producto, nombreID, cantidadID, comentarioID) {
 
     if (nombre === "" || cantidad === "") {
 
-        alert("Por favor completa tu nombre y la cantidad.");
+        alert(
+        "Por favor completa tu nombre y la cantidad."
+        );
 
         return;
-
     }
 
 
@@ -506,3 +546,5 @@ function enviarPedido(producto, nombreID, cantidadID, comentarioID) {
 
 </body>
 </html>
+
+
