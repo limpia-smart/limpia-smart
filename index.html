@@ -3,290 +3,306 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Limpia Smart</title>
 
 <style>
 * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f8fc;
-    color: #24364b;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8fc;
+  color: #24364b;
 }
 
 header {
-    background: white;
-    text-align: center;
-    padding: 25px 15px;
+  background: white;
+  text-align: center;
+  padding: 25px 15px;
 }
 
 .logo {
-    width: 130px;
-    max-width: 80%;
+  width: 130px;
+  max-width: 80%;
 }
 
 header h1 {
-    color: #087ac1;
-    margin-bottom: 5px;
+  color: #087ac1;
+  margin-bottom: 5px;
 }
 
 header p {
-    color: #52677d;
+  color: #52677d;
 }
 
 nav {
-    background: #087ac1;
-    padding: 15px;
-    text-align: center;
+  background: #087ac1;
+  padding: 15px;
+  text-align: center;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
 }
 
 .portada {
-    text-align: center;
-    padding: 45px 15px;
-    background: #e1f2ff;
+  text-align: center;
+  padding: 45px 15px;
+  background: #e1f2ff;
 }
 
 .portada h2 {
-    color: #087ac1;
+  color: #087ac1;
 }
 
 .contenedor {
-    max-width: 1100px;
-    margin: auto;
-    padding: 25px 15px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 15px;
 }
 
 .productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .producto {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #00000012;
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #00000012;
 }
 
 .foto-producto {
-    width: 100%;
-    height: 210px;
-    object-fit: contain;
-    border-radius: 10px;
-    background: #f4f8fc;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f4f8fc;
 }
 
 .producto h3 {
-    color: #087ac1;
+  color: #087ac1;
 }
 
 .precio {
-    font-size: 22px;
-    font-weight: bold;
-    color: #087ac1;
+  font-size: 22px;
+  font-weight: bold;
+  color: #087ac1;
 }
 
 .boton {
-    display: inline-block;
-    background: #087ac1;
-    color: white;
-    text-decoration: none;
-    padding: 11px 18px;
-    border-radius: 7px;
-    margin-top: 10px;
+  display: inline-block;
+  background: #087ac1;
+  color: white;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 7px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .boton:hover {
-    background: #045b91;
+  background: #045b91;
+}
+
+.detalle {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.detalle h3 {
+  color: #087ac1;
+}
+
+.detalle .foto-producto {
+  max-width: 400px;
+  height: 300px;
+}
+
+.detalle[hidden] {
+  display: none;
 }
 
 footer {
-    background: #087ac1;
-    color: white;
-    text-align: center;
-    padding: 22px;
-    margin-top: 30px;
+  background: #087ac1;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  margin-top: 30px;
 }
 
+#contacto {
+  text-align: center;
+  padding: 25px 15px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.jpg" alt="Logo Limpia Smart" class="logo">
-
-    <h1>Limpia Smart</h1>
-
-    <p>Limpieza y cuidado tecnológico</p>
-
-    <strong>Dale nueva vida a tu tecnología</strong>
+<img src="logo.jpg" alt="Logo Limpia Smart" class="logo">
+<h1>Limpia Smart</h1>
+<p>Limpieza y cuidado tecnológico</p>
+<strong>Dale nueva vida a tu tecnología</strong>
 </header>
 
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#productos">Productos</a>
-    <a href="#contacto">Contacto</a>
+<a href="#inicio">Inicio</a>
+<a href="#productos" onclick="volverProductos(); return false;">Productos</a>
+<a href="#contacto">Contacto</a>
 </nav>
 
 <section class="portada" id="inicio">
-
-    <h2>Cuida tus dispositivos con Limpia Smart</h2>
-
-    <p>
-        Productos diseñados para mantener limpios
-        tus equipos tecnológicos.
-    </p>
-
-    <a href="#productos" class="boton">
-        Ver productos
-    </a>
-
+<h2>Cuida tus dispositivos con Limpia Smart</h2>
+<p>Productos diseñados para mantener limpios tus equipos tecnológicos.</p>
+<a href="#productos" class="boton"
+onclick="volverProductos(); return false;">Ver productos</a>
 </section>
 
 <main class="contenedor">
 
+<section id="catalogo">
 <h2 id="productos">Nuestros productos</h2>
 
 <div class="productos">
 
-    <!-- PRODUCTO 1 -->
-
-    <article class="producto">
-
-        <img
-            src="https://limpia-smart.github.io/limpia-smart/Spray-pantallas.jpg"
-            alt="Spray para pantallas"
-            class="foto-producto"
-        >
-
-        <h3>Spray para pantallas</h3>
-
-        <p>
-            Producto diseñado para la limpieza
-            y cuidado de pantallas.
-        </p>
-
-        <p class="precio">$75 MXN</p>
-
-    </article>
-
-
-    <!-- PRODUCTO 2 -->
-
-    <article class="producto">
-
-        <img
-            src="https://limpia-smart.github.io/limpia-smart/Spray-menta.jpg"
-            alt="Spray de menta"
-            class="foto-producto"
-        >
-
-        <h3>Spray de menta</h3>
-
-        <p>
-            Una opción con aroma fresco
-            para el cuidado tecnológico.
-        </p>
-
-        <p class="precio">$80 MXN</p>
-
-    </article>
-
-
-    <!-- PRODUCTO 3 -->
-
-    <article class="producto">
-
-        <img
-            src="https://limpia-smart.github.io/limpia-smart/Spray-multiuso.jpg"
-            alt="Spray multiuso tecnológico"
-            class="foto-producto"
-        >
-
-        <h3>Spray multiuso tecnológico</h3>
-
-        <p>
-            Producto pensado para distintas
-            superficies de equipos tecnológicos.
-        </p>
-
-        <p class="precio">$90 MXN</p>
+<article class="producto">
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-pantallas.jpg"
+alt="Spray para pantallas" class="foto-producto">
+<h3>Spray para pantallas</h3>
+<p>Producto diseñado para la limpieza y cuidado de pantallas.</p>
+<p class="precio">$75 MXN</p>
+<button class="boton" onclick="mostrarProducto('pantallas')">Ver producto</button>
 </article>
 
+<article class="producto">
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-menta.jpg"
+alt="Spray de menta" class="foto-producto">
+<h3>Spray de menta</h3>
+<p>Una opción con aroma fresco para el cuidado tecnológico.</p>
+<p class="precio">$80 MXN</p>
+<button class="boton" onclick="mostrarProducto('menta')">Ver producto</button>
+</article>
 
-    <!-- PRODUCTO 4 -->
+<article class="producto">
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-multiuso.jpg"
+alt="Spray multiuso tecnológico" class="foto-producto">
+<h3>Spray multiuso tecnológico</h3>
+<p>Producto pensado para distintas superficies de equipos tecnológicos.</p>
+<p class="precio">$90 MXN</p>
+<button class="boton" onclick="mostrarProducto('multiuso')">Ver producto</button>
+</article>
 
-    <article class="producto">
-
-        <img
-            src="https://limpia-smart.github.io/limpia-smart/Spray-computadoras.jpg"
-            alt="Spray para computadoras"
-            class="foto-producto"
-        >
-
-        <h3>Spray para computadoras</h3>
-
-        <p>
-            Producto diseñado para el cuidado
-            y limpieza de las superficies
-            de tus computadoras.
-        </p>
-
-        <p class="precio">$80 MXN</p>
-
-    </article>
+<article class="producto">
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-computadoras.jpg"
+alt="Spray para computadoras" class="foto-producto">
+<h3>Spray para computadoras</h3>
+<p>Producto diseñado para el cuidado y limpieza de las superficies de tus computadoras.</p>
+<p class="precio">$80 MXN</p>
+<button class="boton" onclick="mostrarProducto('computadoras')">Ver producto</button>
+</article>
 
 </div>
+</section>
 
+<section class="detalle" id="pantallas" hidden>
+<h3>Spray para pantallas</h3>
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-pantallas.jpg"
+alt="Spray para pantallas" class="foto-producto">
+<p>Ideal para el cuidado de las superficies de pantallas compatibles. Sigue las indicaciones de uso.</p>
+<p class="precio">$75 MXN</p>
+<button class="boton" onclick="volverProductos()">Volver a productos</button>
+</section>
 
-<!-- CONTACTO -->
+<section class="detalle" id="menta" hidden>
+<h3>Spray de menta</h3>
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-menta.jpg"
+alt="Spray de menta" class="foto-producto">
+<p>Una alternativa con aroma fresco para el cuidado tecnológico.</p>
+<p class="precio">$80 MXN</p>
+<button class="boton" onclick="volverProductos()">Volver a productos</button>
+</section>
+
+<section class="detalle" id="multiuso" hidden>
+<h3>Spray multiuso tecnológico</h3>
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-multiuso.jpg"
+alt="Spray multiuso tecnológico" class="foto-producto">
+<p>Una opción para el cuidado de diferentes superficies compatibles de dispositivos electrónicos.</p>
+<p class="precio">$90 MXN</p>
+<button class="boton" onclick="volverProductos()">Volver a productos</button>
+</section>
+
+<section class="detalle" id="computadoras" hidden>
+<h3>Spray para computadoras</h3>
+<img src="https://limpia-smart.github.io/limpia-smart/Spray-computadoras.jpg"
+alt="Spray para computadoras" class="foto-producto">
+<p>Producto diseñado para el cuidado y limpieza de las superficies de tus computadoras.</p>
+<p class="precio">$80 MXN</p>
+<button class="boton" onclick="volverProductos()">Volver a productos</button>
+</section>
 
 <section id="contacto">
-
-    <h2>Contáctanos</h2>
-
-    <p>
-        ¿Te interesa alguno de nuestros productos?
-        Escríbenos por WhatsApp.
-    </p>
-
-    <a
-        class="boton"
-        href="https://wa.me/527203553006"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Hacer pedido por WhatsApp
-    </a>
-
+<h2>Contáctanos</h2>
+<p>¿Te interesa alguno de nuestros productos? Escríbenos por WhatsApp.</p>
+<a class="boton"
+href="https://wa.me/527203553006"
+target="_blank"
+rel="noopener">
+Hacer pedido por WhatsApp
+</a>
 </section>
 
 </main>
 
 <footer>
-
-    <p>
-        Limpia Smart | Dale nueva vida a tu tecnología
-    </p>
-
+<p>Limpia Smart | Dale nueva vida a tu tecnología</p>
 </footer>
+
+<script>
+function mostrarProducto(id) {
+  document.getElementById("catalogo").style.display = "none";
+
+  document.querySelectorAll(".detalle").forEach(function(detalle) {
+    detalle.hidden = true;
+  });
+
+  var producto = document.getElementById(id);
+  producto.hidden = false;
+
+  producto.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function volverProductos() {
+  document.querySelectorAll(".detalle").forEach(function(detalle) {
+    detalle.hidden = true;
+  });
+
+  document.getElementById("catalogo").style.display = "block";
+
+  document.getElementById("productos").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+</script>
 
 </body>
 </html>
-
-
