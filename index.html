@@ -150,11 +150,21 @@ footer {
   padding: 25px 15px;
 }
   #encuesta {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
   background: white;
   text-align: center;
   padding: 25px;
-  margin: 20px 0;
+  margin: 0;
   border-radius: 12px;
+  box-shadow: 0 5px 25px #00000055;
 }
 
 #encuesta input,
@@ -234,8 +244,6 @@ alt="Spray multiuso tecnológico" class="foto-producto">
 </article>
 
 </div>
-</section>
-
 <section class="detalle" id="pantallas" hidden>
 <img class="foto-producto"
 src="https://limpia-smart.github.io/limpia-smart/spray-pantallas.jpg"
@@ -246,23 +254,25 @@ alt="Spray para pantallas" class="foto-producto">
 <p>Aroma Turquoise Oasis.</p>
 <p>Ideal para el cuidado de las superficies de pantallas compatibles. Sigue las indicaciones de uso.</p>
 <p class="precio">$75 MXN</p>
-<a class="boton"
-href="https://wa.me/527203553006?text=Hola%2C%20me%20interesa%20el%20Spray%20para%20pantallas%20con%20aroma%20Turquoise%20Oasis%20de%2075%20MXN."
-target="_blank" rel="noopener">Hacer pedido</a>
+<button class="boton" onclick="abrirEncuesta('Spray para pantallas - $75 MXN')">
+Hacer pedido
+</button>
 <br>
 <button class="boton" onclick="volverProductos()">Volver a productos</button>
 </section>
 
 <section class="detalle" id="menta" hidden>
-<h3>spray de menta</h3>
+<h3>spray de menta</h3></section>
+
+
 <img src="https://limpia-smart.github.io/limpia-smart/spray-menta.jpg" class="foto-producto"
 alt="spray de menta">
 <p>Aroma a menta.</p>
 <p>Una opción con aroma fresco para el cuidado tecnológico.</p>
 <p class="precio">$80 MXN</p>
-<a class="boton"
-href="https://wa.me/527203553006?text=Hola%2C%20me%20interesa%20el%20Spray%20de%20menta%20de%2080%20MXN."
-target="_blank" rel="noopener">Hacer pedido</a>
+<button class="boton" onclick="abrirEncuesta('Spray de menta - $80 MXN')">
+Hacer pedido
+</button>
 <br>
 <button class="boton" onclick="volverProductos()">Volver a productos</button>
 </section>
@@ -274,9 +284,9 @@ alt="Spray multiuso tecnológico" class="foto-producto">
 <p>Aroma por definir.</p>
 <p>Producto pensado para distintas superficies compatibles de equipos tecnológicos.</p>
 <p class="precio">$90 MXN</p>
-<a class="boton"
-href="https://wa.me/527203553006?text=Hola%2C%20me%20interesa%20el%20Spray%20multiuso%20tecnol%C3%B3gico%20de%2090%20MXN."
-target="_blank" rel="noopener">Hacer pedido</a>
+<button class="boton" onclick="abrirEncuesta('Spray multiuso tecnológico - $90 MXN')">
+Hacer pedido
+</button>
 <br>
 <button class="boton" onclick="volverProductos()">Volver a productos</button>
 </section>
@@ -288,9 +298,9 @@ alt="Spray para computadoras" class="foto-producto">
 <p>Aroma por definir .</p>
 <p>Producto diseñado para el cuidado y limpieza de las superficies de tus computadoras.</p>
 <p class="precio">$80 MXN</p>
-<a class="boton"
-href="https://wa.me/527203553006?text=Hola%2C%20me%20interesa%20el%20Spray%20para%20computadoras%20con%20aroma%20a%20menta%20de%2080%20MXN."
-target="_blank" rel="noopener">Hacer pedido</a>
+<button class="boton" onclick="abrirEncuesta('Spray para computadoras - $80 MXN')">
+Hacer pedido
+</button>
 <br>
 <button class="boton" onclick="volverProductos()">Volver a productos</button>
 </section>
@@ -304,29 +314,29 @@ target="_blank" rel="noopener">
 Hacer pedido por WhatsApp
 </a>
 </section>
-<section id="encuesta">
-    <h2>Realiza tu pedido</h2>
+  
+<section id="encuesta" hidden>
+  <h2>Realiza tu pedido</h2>
+  <p id="productoSeleccionado"></p>
 
-    <form onsubmit="enviarEncuesta(event)">
+  <form onsubmit="enviarEncuesta(event)">
+    <label for="nombre">Nombre del cliente:</label>
+    <br>
+    <input type="text" id="nombre" required>
+    <br><br>
 
-        <label for="nombre">Nombre del cliente:</label>
-        <br>
-        <input type="text" id="nombre" required>
-        <br><br>
+    <label for="cantidad">¿Cuántos productos deseas comprar?</label>
+    <br>
+    <input type="number" id="cantidad" min="1" value="1" required>
+    <br><br>
 
-        <label for="cantidad">¿Cuántos productos deseas comprar?</label>
-        <br>
-        <input type="number" id="cantidad" min="1" required>
-        <br><br>
+    <label for="comentario">Deja tu comentario:</label>
+    <br>
+    <textarea id="comentario" rows="4"></textarea>
+    <br><br>
 
-        <label for="comentario">Deja tu comentario:</label>
-        <br>
-        <textarea id="comentario" rows="4"></textarea>
-        <br><br>
-
-        <button class="boton" type="submit">
-            Enviar pedido
-        </button>
+    <button class="boton" type="submit">Enviar pedido</button>
+    <button class="boton" type="button" onclick="cerrarEncuesta()">Cancelar</button>
   </form>
 </section> 
   
@@ -337,7 +347,11 @@ Hacer pedido por WhatsApp
 </footer>
 
 <script>
+var productoPedido = "";
+
 function mostrarProducto(id) {
+  cerrarEncuesta();
+
   document.getElementById("catalogo").style.display = "none";
 
   document.querySelectorAll(".detalle").forEach(function(detalle) {
@@ -354,6 +368,8 @@ function mostrarProducto(id) {
 }
 
 function volverProductos() {
+  cerrarEncuesta();
+
   document.querySelectorAll(".detalle").forEach(function(detalle) {
     detalle.hidden = true;
   });
@@ -365,22 +381,37 @@ function volverProductos() {
     block: "start"
   });
 }
-  function enviarEncuesta(event) {
-   event.preventDefault();
 
-    var nombre = document.getElementById("nombre").value;
-    var cantidad = document.getElementById("cantidad").value;
-    var comentario = document.getElementById("comentario").value;
+function abrirEncuesta(producto) {
+  productoPedido = producto;
 
-    var mensaje = "Hola, quiero realizar un pedido de Limpia Smart.\n"
-        + "Nombre: " + nombre + "\n"
-        + "Cantidad de productos: " + cantidad + "\n"
-        + "Comentario: " + comentario;
+  document.getElementById("productoSeleccionado").textContent =
+    "Producto seleccionado: " + producto;
 
-    var enlace = "https://wa.me/527203553006?text="
-        + encodeURIComponent(mensaje);
+  document.getElementById("encuesta").hidden = false;
+}
 
-    window.open(enlace, "_blank");
+function cerrarEncuesta() {
+  document.getElementById("encuesta").hidden = true;
+}
+
+function enviarEncuesta(event) {
+  event.preventDefault();
+
+  var nombre = document.getElementById("nombre").value;
+  var cantidad = document.getElementById("cantidad").value;
+  var comentario = document.getElementById("comentario").value;
+
+  var mensaje = "Hola, quiero realizar un pedido de Limpia Smart.\n"
+    + "Producto: " + productoPedido + "\n"
+    + "Nombre: " + nombre + "\n"
+    + "Cantidad: " + cantidad + "\n"
+    + "Comentario: " + comentario;
+
+  var enlace = "https://wa.me/527203553006?text="
+    + encodeURIComponent(mensaje);
+
+  window.open(enlace, "_blank");
 }
 </script>
 </body>
