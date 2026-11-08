@@ -2,144 +2,195 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Limpia Smart</title>
 
 <style>
 
-body{
-    font-family:Arial, sans-serif;
-    text-align:center;
-    background:#f0f7ff;
-    color:#234;
-    margin:0;
+* {
+    box-sizing: border-box;
 }
 
-header{
-    background:#1769aa;
-    color:white;
-    padding:25px 20px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #1d3557;
 }
 
-.logo{
-    width:170px;
-    max-width:80%;
-    border-radius:50%;
-    display:block;
-    margin:0 auto 15px auto;
+header {
+    background: #eaf4ff;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 3px solid #2196f3;
 }
 
-header h1{
-    margin:5px 0;
+.logo {
+    width: 150px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
 }
 
-.slogan{
-    font-size:18px;
-    font-weight:bold;
-    margin:8px 0;
+h1 {
+    margin: 5px 0;
+    font-size: 34px;
+    color: #1565c0;
 }
 
-section{
-    padding:25px 20px;
+header p {
+    margin: 8px 0;
+    font-size: 17px;
 }
 
-h2{
-    color:#1769aa;
+.slogan {
+    font-weight: bold;
+    color: #2196f3;
+    font-size: 20px;
 }
 
-.producto{
-    background:white;
-    margin:18px auto;
-    padding:20px;
-    border-radius:12px;
-    max-width:500px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
 }
 
-.producto h3{
-    color:#1769aa;
+.titulo {
+    text-align: center;
+    color: #1565c0;
+    margin-bottom: 25px;
 }
 
-.boton{
-    display:inline-block;
-    background:#1769aa;
-    color:white;
-    padding:11px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    margin:6px;
-    border:none;
-    cursor:pointer;
-    font-size:15px;
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
-.boton:hover{
-    background:#0d4f82;
+.producto {
+    background: white;
+    border: 1px solid #d6e9ff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 80, 160, 0.12);
 }
 
-.apartado{
-    display:none;
-    background:white;
-    margin:25px auto;
-    padding:25px;
-    border-radius:12px;
-    max-width:650px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+.producto h3 {
+    color: #1565c0;
 }
 
-.apartado:target{
-    display:block;
+.producto p {
+    color: #555;
+    line-height: 1.5;
 }
 
-.espacio-foto{
-    width:250px;
-    height:250px;
-    margin:20px auto;
-    border:3px dashed #1769aa;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#1769aa;
-    background:#f0f7ff;
+.precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1565c0;
+    margin: 15px 0;
 }
 
-.precio{
-    font-size:20px;
-    font-weight:bold;
-    color:#1769aa;
+.boton {
+    display: inline-block;
+    background: #2196f3;
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.formulario{
-    background:white;
-    max-width:600px;
-    margin:20px auto;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+.boton:hover {
+    background: #1565c0;
+}
+
+.detalle {
+    margin-top: 45px;
+    padding: 30px;
+    background: #f5faff;
+    border: 1px solid #cfe5ff;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.detalle h2 {
+    color: #1565c0;
+}
+
+.foto-producto {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+    background: white;
+    border: 2px solid #d9eaff;
+    padding: 10px;
+}
+
+.pedido {
+    margin-top: 25px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #d6e9ff;
+}
+
+.pedido h3 {
+    color: #1565c0;
 }
 
 input,
-textarea{
-    width:90%;
-    padding:12px;
-    margin:8px;
-    border:1px solid #b8cce0;
-    border-radius:8px;
-    font-size:15px;
-    box-sizing:border-box;
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #b9d8f5;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
 }
 
-textarea{
-    height:100px;
-    resize:none;
+textarea {
+    resize: vertical;
+    min-height: 90px;
 }
 
-footer{
-    background:#1769aa;
-    color:white;
-    padding:15px;
-    margin-top:30px;
+.boton-whatsapp {
+    background: #2196f3;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.boton-whatsapp:hover {
+    background: #1565c0;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background: #eaf4ff;
+    color: #1d3557;
 }
 
 </style>
@@ -155,312 +206,300 @@ footer{
 
 <p>Limpieza y cuidado tecnológico</p>
 
-<p class="slogan">
-Dale nueva vida a tu tecnología
-</p>
+<p class="slogan">Dale nueva vida a tu tecnología</p>
 
 </header>
 
 
-<section id="productos">
+<div class="contenedor">
 
-<h2>Nuestros productos</h2>
+<h2 class="titulo">Nuestros productos</h2>
+
+
+<div class="productos">
 
 
 <div class="producto">
 
 <h3>Spray para pantallas</h3>
 
-<p>Para pantallas compatibles.</p>
+<p>
+Limpieza y cuidado para pantallas de computadoras,
+laptops y otros dispositivos electrónicos.
+</p>
 
-<a class="boton" href="#pantallas">
+<p class="precio">$75</p>
+
+<a href="#pantallas" class="boton">
 Ver producto
 </a>
 
 </div>
 
 
+
 <div class="producto">
 
-<h3>Spray para computadoras</h3>
+<h3>Spray de menta</h3>
 
-<p>Para superficies exteriores compatibles.</p>
+<p>
+Una opción con agradable aroma de menta para
+el cuidado y limpieza de superficies tecnológicas.
+</p>
 
-<a class="boton" href="#computadoras">
+<p class="precio">$80</p>
+
+<a href="#menta" class="boton">
 Ver producto
 </a>
 
 </div>
 
 
-<div class="producto">
 
+<div class="producto">
 <h3>Spray multiuso tecnológico</h3>
 
-<p>Para dispositivos compatibles.</p>
+<p>
+Una opción práctica para el cuidado y limpieza
+de diferentes superficies tecnológicas.
+</p>
 
-<a class="boton" href="#multiuso">
+<p class="precio">$90</p>
+
+<a href="#multiuso" class="boton">
 Ver producto
 </a>
 
 </div>
 
-</section>
+</div>
 
 
-<section id="pantallas" class="apartado">
+
+<section id="pantallas" class="detalle">
 
 <h2>Spray para pantallas</h2>
 
-<div class="espacio-foto">
-Aquí irá la foto del spray
-</div>
+<img src="Spray-pantallas.jpg"
+     alt="Spray para pantallas"
+     class="foto-producto">
 
 <p>
-Producto de Limpia Smart pensado para la limpieza
-de pantallas compatibles.
+Spray diseñado para ayudar a mantener limpias
+las pantallas de tus dispositivos tecnológicos.
 </p>
 
 <p class="precio">
-Precio: $_
+Precio: $75
 </p>
 
-<a class="boton" href="#pedido-pantallas">
-Hacer pedido
-</a>
 
-<a class="boton" href="#productos">
+<div class="pedido">
+
+<h3>Hacer pedido</h3>
+
+<input type="text"
+       id="nombrePantallas"
+       placeholder="Tu nombre">
+
+<input type="number"
+       id="cantidadPantallas"
+       min="1"
+       placeholder="Cantidad">
+
+<textarea id="comentarioPantallas"
+          placeholder="Comentario adicional (opcional)">
+</textarea>
+
+<button class="boton-whatsapp"
+onclick="enviarPedido(
+'Spray para pantallas - $75',
+'nombrePantallas',
+'cantidadPantallas',
+'comentarioPantallas')">
+
+Enviar pedido por WhatsApp
+
+</button>
+
+</div>
+
+<a href="#" class="volver">
 Volver a productos
 </a>
 
 </section>
 
 
-<section id="computadoras" class="apartado">
 
-<h2>Spray para computadoras</h2>
+<section id="menta" class="detalle">
 
-<div class="espacio-foto">
-Aquí irá la foto del spray
+<h2>Spray de menta</h2>
+
+<div class="foto-producto">
+
+<p style="padding-top:100px;">
+Foto del producto próximamente
+</p>
+
 </div>
 
 <p>
-Producto para la limpieza de superficies exteriores
-compatibles de computadoras.
+Spray con aroma de menta pensado para el cuidado
+y limpieza de superficies tecnológicas.
 </p>
 
 <p class="precio">
-Precio: $_
+Precio: $80
 </p>
 
-<a class="boton" href="#pedido-computadoras">
-Hacer pedido
-</a>
 
-<a class="boton" href="#productos">
+<div class="pedido">
+
+<h3>Hacer pedido</h3>
+
+<input type="text"
+       id="nombreMenta"
+       placeholder="Tu nombre">
+
+<input type="number"
+       id="cantidadMenta"
+       min="1"
+       placeholder="Cantidad">
+
+<textarea id="comentarioMenta"
+          placeholder="Comentario adicional (opcional)">
+</textarea>
+
+<button class="boton-whatsapp"
+onclick="enviarPedido(
+'Spray de menta - $80',
+'nombreMenta',
+'cantidadMenta',
+'comentarioMenta')">
+
+Enviar pedido por WhatsApp
+
+</button>
+
+</div>
+
+<a href="#" class="volver">
 Volver a productos
 </a>
 
 </section>
 
 
-<section id="multiuso" class="apartado">
+
+<section id="multiuso" class="detalle">
 
 <h2>Spray multiuso tecnológico</h2>
 
-<div class="espacio-foto">
-    Aquí irá la foto del spray
+<div class="foto-producto">
+
+<p style="padding-top:100px;">
+Foto del producto próximamente
+</p>
+
 </div>
 
 <p>
-Producto pensado para la limpieza de dispositivos
-electrónicos compatibles.
+Una opción práctica para la limpieza de diferentes
+superficies tecnológicas.
 </p>
 
 <p class="precio">
-Precio: $_
+Precio: $90
 </p>
 
-<a class="boton" href="#pedido-multiuso">
-Hacer pedido
-</a>
 
-<a class="boton" href="#productos">
-Volver a productos
-</a>
+<div class="pedido">
 
-</section>
+<h3>Hacer pedido</h3>
 
+<input type="text"
+       id="nombreMultiuso"
+       placeholder="Tu nombre">
 
-<section id="pedido-pantallas" class="apartado">
+<input type="number"
+       id="cantidadMultiuso"
+       min="1"
+       placeholder="Cantidad">
 
-<div class="formulario">
+<textarea id="comentarioMultiuso"
+          placeholder="Comentario adicional (opcional)">
+</textarea>
 
-<h2>Hacer pedido</h2>
+<button class="boton-whatsapp"
+onclick="enviarPedido(
+'Spray multiuso tecnológico - $90',
+'nombreMultiuso',
+'cantidadMultiuso',
+'comentarioMultiuso')">
 
-<p>Producto seleccionado: Spray para pantallas</p>
-
-<input
-type="text"
-id="nombrePantallas"
-placeholder="Tu nombre">
-
-<input
-type="number"
-id="cantidadPantallas"
-min="1"
-placeholder="Cantidad">
-
-<textarea
-id="comentarioPantallas"
-placeholder="Escribe algún comentario sobre tu pedido"></textarea>
-
-<button class="boton"
-onclick="enviarPedido('Spray para pantallas','nombrePantallas','cantidadPantallas','comentarioPantallas')">
 Enviar pedido por WhatsApp
+
 </button>
-
-<br>
-
-<a class="boton" href="#productos">
-Volver a productos
-</a>
 
 </div>
 
-</section>
-
-
-<section id="pedido-computadoras" class="apartado">
-
-<div class="formulario">
-
-<h2>Hacer pedido</h2>
-
-<p>Producto seleccionado: Spray para computadoras</p>
-
-<input
-type="text"
-id="nombreComputadoras"
-placeholder="Tu nombre">
-
-<input
-type="number"
-id="cantidadComputadoras"
-min="1"
-placeholder="Cantidad">
-
-<textarea
-id="comentarioComputadoras"
-placeholder="Escribe algún comentario sobre tu pedido"></textarea>
-
-<button class="boton"
-onclick="enviarPedido('Spray para computadoras','nombreComputadoras','cantidadComputadoras','comentarioComputadoras')">
-Enviar pedido por WhatsApp
-</button>
-
-<br>
-
-<a class="boton" href="#productos">
+<a href="#" class="volver">
 Volver a productos
 </a>
 
-</div>
-
 </section>
-
-
-<section id="pedido-multiuso" class="apartado">
-
-<div class="formulario">
-
-<h2>Hacer pedido</h2>
-
-<p>Producto seleccionado: Spray multiuso tecnológico</p>
-
-<input
-type="text"
-id="nombreMultiuso"
-placeholder="Tu nombre">
-
-<input
-type="number"
-id="cantidadMultiuso"
-min="1"
-placeholder="Cantidad">
-
-<textarea
-id="comentarioMultiuso"
-placeholder="Escribe algún comentario sobre tu pedido"></textarea>
-
-<button class="boton"
-onclick="enviarPedido('Spray multiuso tecnológico','nombreMultiuso','cantidadMultiuso','comentarioMultiuso')">
-Enviar pedido por WhatsApp
-</button>
-
-<br>
-
-<a class="boton" href="#productos">
-Volver a productos
-</a>
 
 </div>
 
-</section>
-
-
-<section>
-
-<h2>Sobre nosotros</h2>
-
-<p>
-Somos una microempresa dedicada al cuidado
-de dispositivos electrónicos.
-</p>
-
-</section>
 
 
 <footer>
 
-<p>
 Limpia Smart © 2026
-</p>
 
 </footer>
 
 
 <script>
 
-function enviarPedido(producto, nombreID, cantidadID, comentarioID){
+function enviarPedido(producto, nombreID, cantidadID, comentarioID) {
 
-    let nombre = document.getElementById(nombreID).value;
-    let cantidad = document.getElementById(cantidadID).value;
-    let comentario = document.getElementById(comentarioID).value;
+    let nombre =
+        document.getElementById(nombreID).value;
 
-    if(nombre === "" || cantidad === ""){
+    let cantidad =
+    document.getElementById(cantidadID).value;
+
+    let comentario =
+    document.getElementById(comentarioID).value;
+
+
+    if (nombre === "" || cantidad === "") {
 
         alert("Por favor completa tu nombre y la cantidad.");
 
         return;
+
     }
 
-    let mensaje =
-        "Hola, quiero hacer un pedido de Limpia Smart.%0A%0A" +
-        "Nombre: " + nombre + "%0A" +
-        "Producto: " + producto + "%0A" +
-        "Cantidad: " + cantidad + "%0A" +
-        "Comentario: " + comentario;
 
-    let numero = "527203553006";
+    let mensaje =
+    "Hola, quiero hacer un pedido de Limpia Smart.\n\n" +
+    "Producto: " + producto + "\n" +
+    "Nombre: " + nombre + "\n" +
+    "Cantidad: " + cantidad + "\n" +
+    "Comentario: " + comentario;
+
 
     let url =
-        "https://wa.me/" +
-        numero +
-        "?text=" +
-        mensaje;
+    "https://wa.me/527203553006?text=" +
+    encodeURIComponent(mensaje);
+
 
     window.open(url, "_blank");
+
 }
 
 </script>
