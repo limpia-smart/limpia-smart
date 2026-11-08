@@ -149,6 +149,28 @@ footer {
   text-align: center;
   padding: 25px 15px;
 }
+  #encuesta {
+  background: white;
+  text-align: center;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+#encuesta input,
+#encuesta textarea {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#encuesta label {
+  font-weight: bold;
+  color: #087ac1;
+}
 </style>
 </head>
 
@@ -260,7 +282,6 @@ target="_blank" rel="noopener">Hacer pedido</a>
 </section>
 
 <section class="detalle" id="computadoras" hidden>
-<img
 <h3>Spray para computadoras</h3>
 <img src="Spray-computadoras.jpg"
 alt="Spray para computadoras" class="foto-producto">
@@ -344,7 +365,23 @@ function volverProductos() {
     block: "start"
   });
 }
-</script>
+  function enviarEncuesta(event) {
+   event.preventDefault();
 
+    var nombre = document.getElementById("nombre").value;
+    var cantidad = document.getElementById("cantidad").value;
+    var comentario = document.getElementById("comentario").value;
+
+    var mensaje = "Hola, quiero realizar un pedido de Limpia Smart.\n"
+        + "Nombre: " + nombre + "\n"
+        + "Cantidad de productos: " + cantidad + "\n"
+        + "Comentario: " + comentario;
+
+    var enlace = "https://wa.me/527203553006?text="
+        + encodeURIComponent(mensaje);
+
+    window.open(enlace, "_blank");
+}
+</script>
 </body>
 </html>
