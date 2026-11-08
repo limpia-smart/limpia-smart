@@ -283,7 +283,32 @@ target="_blank" rel="noopener">
 Hacer pedido por WhatsApp
 </a>
 </section>
+<section id="encuesta">
+    <h2>Realiza tu pedido</h2>
 
+    <form onsubmit="enviarEncuesta(event)">
+
+        <label for="nombre">Nombre del cliente:</label>
+        <br>
+        <input type="text" id="nombre" required>
+        <br><br>
+
+        <label for="cantidad">¿Cuántos productos deseas comprar?</label>
+        <br>
+        <input type="number" id="cantidad" min="1" required>
+        <br><br>
+
+        <label for="comentario">Deja tu comentario:</label>
+        <br>
+        <textarea id="comentario" rows="4"></textarea>
+        <br><br>
+
+        <button class="boton" type="submit">
+            Enviar pedido
+        </button>
+  </form>
+</section> 
+  
 </main>
 
 <footer>
